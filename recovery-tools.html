@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recovery Tools | My Recovery Journey</title>
+  <meta name="description" content="Free private recovery tools: gratitude journal, milestone counter, daily reflection, grounding exercise, and next-right-step checklist. Data stays on your device." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        My Recovery Journey
+        <span>Faith · Hope · New Beginnings</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="my-journey.html">My Story</a>
+        <a href="recovery-tools.html">Tools</a>
+        <a href="journal.html">Journal</a>
+        <a href="articles.html">Articles</a>
+        <a href="resources.html">Resources</a>
+        <a href="faith.html">Faith</a>
+        <a href="resources.html#crisis" class="crisis-btn">Need Help Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Recovery Tools</h1>
+      <p>Small, practical tools for reflecting, tracking progress, and taking the next right step.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container container-narrow">
+      <p class="muted text-center mb-2">Use what helps. Skip what doesn’t. Progress isn’t always a straight line.</p>
+
+      <!-- Gratitude Journal -->
+      <div class="tool-card" id="journal">
+        <h3>📓 My Private Gratitude Journal</h3>
+        <p>Write down a few things that matter today — even if they’re small.</p>
+        <div class="journal-area">
+          <textarea id="journal-text" placeholder="Today I’m grateful for..."></textarea>
+          <div class="journal-actions">
+            <button type="button" class="btn btn-primary btn-sm" id="journal-save">Save Entry</button>
+            <button type="button" class="btn btn-outline btn-sm" id="journal-clear">Clear</button>
+            <button type="button" class="btn btn-teal-outline btn-sm" id="journal-export">Export (.txt)</button>
+          </div>
+        </div>
+        <div class="saved-entries">
+          <h4 style="font-size:1rem;margin-bottom:0.5rem;">Saved entries</h4>
+          <div id="saved-entries-list"></div>
+        </div>
+        <p class="privacy-note">
+          <strong>Privacy:</strong> Entries are stored only in this browser on this device. They are never sent to any server. Clearing browser data, using private browsing, or switching devices may erase them. Export regularly if you want a backup.
+        </p>
+      </div>
+
+      <!-- Milestones -->
+      <div class="tool-card" id="milestones">
+        <h3>🏆 My Recovery Milestones</h3>
+        <p>Enter the date you began your current recovery journey. Your count updates on this device.</p>
+        <div class="date-input-row">
+          <label for="start-date">Start date:</label>
+          <input type="date" id="start-date" />
+          <button type="button" class="btn btn-outline btn-sm" id="clear-date">Clear</button>
+        </div>
+        <div class="milestone-display">
+          <div class="milestone-box">
+            <div class="number" id="count-days">—</div>
+            <div class="label">days</div>
+          </div>
+          <div class="milestone-box">
+            <div class="number" id="count-weeks">—</div>
+            <div class="label">full weeks</div>
+          </div>
+          <div class="milestone-box">
+            <div class="number" id="count-months">—</div>
+            <div class="label">full months</div>
+          </div>
+        </div>
+        <p class="privacy-note">Your date is stored only in this browser. Nothing is sent anywhere.</p>
+      </div>
+
+      <!-- Daily Reflection -->
+      <div class="tool-card" id="reflection">
+        <h3>📖 Daily Reflection</h3>
+        <p>A short thought for today, with one question to sit with.</p>
+        <div class="reflection-box">
+          <p id="reflection-text">Loading…</p>
+          <p class="question" id="reflection-question"></p>
+        </div>
+        <button type="button" class="btn btn-outline btn-sm" id="new-reflection">Show another reflection</button>
+      </div>
+
+      <!-- Grounding -->
+      <div class="tool-card" id="grounding">
+        <h3>🧭 When a Moment Feels Difficult</h3>
+        <p>Try this simple 5-4-3-2-1 grounding exercise to reconnect with the present.</p>
+        <ol class="grounding-steps">
+          <li>Name <strong>5 things</strong> you can see.</li>
+          <li>Notice <strong>4 things</strong> you can feel (chair, clothes, air, feet on the floor).</li>
+          <li>Listen for <strong>3 things</strong> you can hear.</li>
+          <li>Notice <strong>2 things</strong> you can smell (or like the smell of).</li>
+          <li>Notice <strong>1 thing</strong> you can taste (or take a sip of water).</li>
+        </ol>
+        <p class="muted">Then consider one small, safe next step: drink water, take a short walk, contact a supportive person, or attend a meeting.</p>
+        <a href="resources.html" class="btn btn-teal-outline btn-sm mt-2">Find recovery support</a>
+      </div>
+
+      <!-- Next Right Step -->
+      <div class="tool-card" id="next-step">
+        <h3>🤝 My Next Right Step</h3>
+        <p>Recovery is built through small choices. Pick one action for today. Your selections are remembered on this device.</p>
+        <ul class="checklist" id="next-step-list">
+          <li>
+            <input type="checkbox" data-id="reach-out" id="step1" />
+            <label for="step1">Reach out to someone supportive</label>
+          </li>
+          <li>
+            <input type="checkbox" data-id="meeting" id="step2" />
+            <label for="step2">Attend a meeting or explore meeting options</label>
+          </li>
+          <li>
+            <input type="checkbox" data-id="rest" id="step3" />
+            <label for="step3">Eat, hydrate, and rest</label>
+          </li>
+          <li>
+            <input type="checkbox" data-id="pray" id="step4" />
+            <label for="step4">Spend a few minutes in prayer, meditation, or reflection</label>
+          </li>
+          <li>
+            <input type="checkbox" data-id="future" id="step5" />
+            <label for="step5">Do one helpful thing for my future</label>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-outline btn-sm" id="reset-steps">Start fresh</button>
+        <p class="privacy-note mt-2">
+          Checklist choices are saved only in this browser. They are not sent to any server.
+        </p>
+      </div>
+
+      <div class="crisis-banner">
+        <strong>Need immediate help?</strong><br />
+        If you are in immediate danger, call 911. In the U.S., call or text <a href="https://988lifeline.org/" target="_blank" rel="noopener">988</a> for crisis support. For treatment referrals, visit <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" rel="noopener">SAMHSA’s National Helpline</a> (1-800-662-4357). This page offers general encouragement, not medical treatment.
+      </div>
+
+      <p class="text-center mt-3">
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">My Recovery Journey</div>
+          <p style="font-size:0.95rem;opacity:0.85;max-width:280px;">
+            Personal encouragement and practical tools from Steven Gregory. Not medical advice or emergency services.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="my-journey.html">My Story</a>
+          <a href="recovery-tools.html">Tools</a>
+          <a href="journal.html">Journal</a>
+          <a href="articles.html">Articles</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="resources.html">Resources</a>
+          <a href="faith.html">Faith</a>
+          <a href="resources.html#crisis">Crisis Help</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Steven Gregory · My Recovery Journey</p>
+        <p style="margin-top:0.35rem;">In immediate danger, call 911. In the U.S., call or text 988 for crisis support.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
